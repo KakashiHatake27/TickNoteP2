@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgPoeTickNotePart2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+          Title="MainWindow" Height="864" Width="1500" WindowStyle="None"
+        WindowState="Maximized">
+
+    <StackPanel>
+        <StackPanel.Background>
+            <ImageBrush x:Name="_img_bg"
+                        ImageSource="Assets/bg.jpg"
+                        Stretch="Fill"/>
+        </StackPanel.Background>
+
+        <TextBlock
+            Margin="40"
+            HorizontalAlignment="Center"
+            Foreground="white"
+            Text="MAIN PAGE"/>
+
+
+        <Button
+            x:Name="Exit"
+            Click="Exit_Click"
+            Content="Exit"/>
+    </StackPanel>
 </Window>

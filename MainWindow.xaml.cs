@@ -24,5 +24,14 @@ namespace ProgPoeTickNotePart2
         {
             InitializeComponent();
         }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+
+                Application.Current.Shutdown();
+            }
+        }
     }
 }
