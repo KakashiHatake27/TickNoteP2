@@ -17,3 +17,7 @@ C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\obj\Debug\ProgPoeTickNotePar
 C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\obj\Debug\ProgPoeTickNotePart2.csproj.CoreCompileInputs.cache
 C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\obj\Debug\ProgPoeTickNotePart2.exe
 C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\obj\Debug\ProgPoeTickNotePart2.pdb
+C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\obj\Debug\Login.g.cs
+C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\obj\Debug\Login.baml
+C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\obj\Debug\SignUp.g.cs
+C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\obj\Debug\SignUp.baml

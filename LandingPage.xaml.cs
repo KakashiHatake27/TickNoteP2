@@ -45,10 +45,9 @@ namespace ProgPoeTickNotePart2
 
             if (timer == 4)
             {
-                //Login login = new Login();
-                MainWindow mw = new MainWindow();
-                mw.Show();
-                //login.Show();
+                Login login = new Login();
+           
+                login.Show();
                 this.Hide();
             }
         }

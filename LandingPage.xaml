@@ -30,13 +30,18 @@
             Text="Welcome to your Time Management App"/>
 
 
-        <TextBlock
+        <!--<TextBlock
             Foreground="White"
             TextAlignment="Center"
             Padding="10"
             FontSize="32"
             FontWeight="Bold"
-            Text="TickNote"/>
+            Text="TickNote"/>-->
+
+        <Image Width="400" 
+               HorizontalAlignment="Right"
+               Margin="0 70 70 0"
+               Source="Assets/logo.png"/>
 
 
         <ProgressBar 
@@ -45,7 +50,7 @@
             Maximum="100"
             Height="20"
             Foreground="{StaticResource gradientBrush}"
-            Margin="20 260 20 20"/>
+            Margin="20 150 20 20"/>
 
     </StackPanel>
 </Window>
