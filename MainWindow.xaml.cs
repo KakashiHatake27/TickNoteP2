@@ -33,5 +33,14 @@ namespace ProgPoeTickNotePart2
                 Application.Current.Shutdown();
             }
         }
+
+        private void imgClose_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+
+                Application.Current.Shutdown();
+            }
+        }
     }
 }

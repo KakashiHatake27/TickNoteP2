@@ -5,96 +5,104 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgPoeTickNotePart2"
         mc:Ignorable="d"
-           Title="SignUp" Height="580" Width="900"    WindowStyle="None"
-        ResizeMode="NoResize" 
-         WindowStartupLocation="CenterScreen">
+        Title="SignUp"
+        Height="580"
+        Width="900"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <ImageBrush x:Name="_img_bg"
                         ImageSource="Assets/lockScreenBg.png"
-                        Stretch="Fill"/>
+                        Stretch="Fill" />
         </Grid.Background>
-        <Border ClipToBounds="True" 
-                CornerRadius="50" 
-                 Margin="0 20 0 0"
-                Background="#908D8D" Name="brdEtikett" Width="800"
+        <Border ClipToBounds="True"
+                CornerRadius="50"
+                Margin="0 20 0 0"
+                Background="#908D8D"
+                Name="brdEtikett"
+                Width="800"
                 Style="{StaticResource borderTransparent}"
                 Height="440">
-            <Canvas        
-                Top="0" Left="0"
-                Background="Transparent"
-                Style="{StaticResource canvasTransparent}">
+            <Canvas Top="0"
+                    Left="0"
+                    Background="Transparent"
+                    Style="{StaticResource canvasTransparent}">
             </Canvas>
         </Border>
 
-        <Line Name="line" Stroke="Black" StrokeThickness="1" X1="450" X2="450" Y1="100" Y2="470"  />
+        <Line Name="line"
+              Stroke="Black"
+              StrokeThickness="1"
+              X1="450"
+              X2="450"
+              Y1="100"
+              Y2="470" />
 
-        <Label 
-            Margin="100 120 0 0"
-            FontSize="20"
-            Content="USERNAME"/>
+        <Label Margin="100 120 0 0"
+               FontSize="20"
+               Content="USERNAME" />
 
         <TextBox x:Name="tbUsername"
-            Margin="100 160 0 0"
-            VerticalAlignment="Top"
-            HorizontalAlignment="Left"
-            Height="30"
-            Width="280"
-            FontSize="20" />
+                 Margin="100 160 0 0"
+                 VerticalAlignment="Top"
+                 HorizontalAlignment="Left"
+                 Height="30"
+                 Width="280"
+                 FontSize="20" />
 
 
-        <Label 
-            Margin="100 230 0 0"
-            FontSize="20"
-            Content="PASSWORD"/>
+        <Label Margin="100 230 0 0"
+               FontSize="20"
+               Content="PASSWORD" />
 
         <TextBox x:Name="tbPassword"
-            Margin="100 270 0 0"
-            VerticalAlignment="Top"
-            HorizontalAlignment="Left"
-            Height="30"
-            Width="280"
-            FontSize="20" />
+                 Margin="100 270 0 0"
+                 VerticalAlignment="Top"
+                 HorizontalAlignment="Left"
+                 Height="30"
+                 Width="280"
+                 FontSize="20" />
 
 
 
 
         <Button x:Name="btnLogin"
-            VerticalAlignment="Bottom"
-                    HorizontalAlignment="Left"
-                    Margin="140 0 0 140"
-                    FontSize="16"
-                    Width="200"
-                    Style="{StaticResource blackRounded}"
-                    Foreground="White"
-                    Background="Black"
-                    Content="LOG IN"/>
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Left"
+                Margin="140 0 0 140"
+                FontSize="16"
+                Width="200"
+                Style="{StaticResource blackRounded}"
+                Foreground="White"
+                Background="Black"
+                Content="LOG IN" />
 
 
         <Button x:Name="btnCancel"
                 Click="btnCancel_Click"
-            VerticalAlignment="Bottom"
-                    HorizontalAlignment="Left"
-                    Margin="140 0 0 80"
-                    FontSize="16"
-                    Width="200"
-                    Style="{StaticResource blackRounded}"
-                    Foreground="White"
-                    Background="Black"
-                    Content="CANCEL"/>
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Left"
+                Margin="140 0 0 80"
+                FontSize="16"
+                Width="200"
+                Style="{StaticResource blackRounded}"
+                Foreground="White"
+                Background="Black"
+                Content="CANCEL" />
 
 
 
-        <Label
-            Margin="0 130 180 0"
-            HorizontalAlignment="Right"
-            FontSize="32"
-            Content="WELCOME TO"/>
+        <Label Margin="0 130 180 0"
+               HorizontalAlignment="Right"
+               FontSize="32"
+               Content="WELCOME TO" />
 
-        <Image Width="400" 
+        <Image Width="400"
                HorizontalAlignment="Right"
                Margin="0 0 60 0"
-Source="Assets/logo.png"/>
+               Source="Assets/logo.png" />
 
 
     </Grid>

@@ -5,29 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgPoeTickNotePart2"
         mc:Ignorable="d"
-                Title="Time Management" Height="450" Width="800"
+        Title="Time Management"
+        Height="450"
+        Width="800"
         BorderBrush="DarkGray"
         WindowStyle="None"
-        ResizeMode="NoResize" 
+        ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
 
 
     <StackPanel>
-        
+
         <StackPanel.Background>
-            <ImageBrush 
-                x:Name="_img_bg"
-                ImageSource="Assets/Load.jpg"
-                Stretch="Fill"/>
+            <ImageBrush x:Name="_img_bg"
+                        ImageSource="Assets/Load.jpg"
+                        Stretch="Fill" />
         </StackPanel.Background>
-        
-        <TextBlock
-            Margin="0 20 0 0"
-            Foreground="White"
-            TextAlignment="Center"
-            Padding="10"
-            FontSize="24"
-            Text="Welcome to your Time Management App"/>
+
+        <TextBlock Margin="0 20 0 0"
+                   Foreground="White"
+                   TextAlignment="Center"
+                   Padding="10"
+                   FontSize="24"
+                   Text="Welcome to your Time Management App" />
 
 
         <!--<TextBlock
@@ -38,19 +38,18 @@
             FontWeight="Bold"
             Text="TickNote"/>-->
 
-        <Image Width="400" 
+        <Image Width="400"
                HorizontalAlignment="Right"
                Margin="0 70 70 0"
-               Source="Assets/logo.png"/>
+               Source="Assets/logo.png" />
 
 
-        <ProgressBar 
-            x:Name="pbLoad"
-            Minimum="0"
-            Maximum="100"
-            Height="20"
-            Foreground="{StaticResource gradientBrush}"
-            Margin="20 150 20 20"/>
+        <ProgressBar x:Name="pbLoad"
+                     Minimum="0"
+                     Maximum="100"
+                     Height="20"
+                     Foreground="{StaticResource gradientBrush}"
+                     Margin="20 150 20 20" />
 
     </StackPanel>
 </Window>
