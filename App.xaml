@@ -5,51 +5,72 @@
              StartupUri="LandingPage.xaml">
     <Application.Resources>
 
-        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="gradientBrush">
-            <GradientStop Color="Green" Offset="0" />
-            <GradientStop Color="Blue" Offset="2.0" />
+        <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,1"
+                             x:Key="gradientBrush">
+            <GradientStop Color="Green"
+                          Offset="0" />
+            <GradientStop Color="Blue"
+                          Offset="2.0" />
         </LinearGradientBrush>
 
-        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="gradientLoginBrush">
-            <GradientStop Color="Yellow" Offset="0" />
-            <GradientStop Color="Red" Offset="2.0" />
+        <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,1"
+                             x:Key="gradientLoginBrush">
+            <GradientStop Color="Yellow"
+                          Offset="0" />
+            <GradientStop Color="Red"
+                          Offset="2.0" />
         </LinearGradientBrush>
 
 
 
-        <Style TargetType="Button" x:Key="WindowButtons">
-            <Setter Property="Opacity" Value="0.5"/>
+        <Style TargetType="Button"
+               x:Key="WindowButtons">
+            <Setter Property="Opacity"
+                    Value="0.5" />
         </Style>
 
 
-        <Style TargetType="Canvas" x:Key="canvasTransparent">
-            <Setter Property="Opacity" Value="0.5"/>
+        <Style TargetType="Canvas"
+               x:Key="canvasTransparent">
+            <Setter Property="Opacity"
+                    Value="0.5" />
         </Style>
 
-        <Style TargetType="Border" x:Key="borderTransparent">
-            <Setter Property="Opacity" Value="0.5"/>
+        <Style TargetType="Border"
+               x:Key="borderTransparent">
+            <Setter Property="Opacity"
+                    Value="0.5" />
         </Style>
 
-        <Style TargetType="{x:Type Button}" x:Key="blackRounded">
-            <Setter Property="Background" Value="Black" />
-            <Setter Property="Width" Value="80" />
+        <Style TargetType="{x:Type Button}"
+               x:Key="blackRounded">
+            <Setter Property="Background"
+                    Value="Black" />
+            <Setter Property="Width"
+                    Value="80" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Grid Width="{TemplateBinding Width}" 
-                              Height="{TemplateBinding Height}" 
+                        <Grid Width="{TemplateBinding Width}"
+                              Height="{TemplateBinding Height}"
                               ClipToBounds="True">
-                            <Rectangle x:Name="innerRectangle" 
-                                       HorizontalAlignment="Stretch" 
-                                       VerticalAlignment="Stretch" 
-                                       Stroke="Transparent" 
-                                       StrokeThickness="20" 
-                                       Fill="{TemplateBinding Background}" 
-                                       RadiusX="20" 
+                            <Rectangle x:Name="innerRectangle"
+                                       HorizontalAlignment="Stretch"
+                                       VerticalAlignment="Stretch"
+                                       Stroke="Transparent"
+                                       StrokeThickness="20"
+                                       Fill="{TemplateBinding Background}"
+                                       RadiusX="20"
                                        RadiusY="20" />
 
                             <DockPanel Name="myContentPresenterDockPanel">
-                                <ContentPresenter x:Name="myContentPresenter" Margin="20" Content="{TemplateBinding  Content}" HorizontalAlignment="Center" TextBlock.Foreground="White" />
+                                <ContentPresenter x:Name="myContentPresenter"
+                                                  Margin="20"
+                                                  Content="{TemplateBinding  Content}"
+                                                  HorizontalAlignment="Center"
+                                                  TextBlock.Foreground="White" />
                             </DockPanel>
                         </Grid>
                     </ControlTemplate>

@@ -5,26 +5,99 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgPoeTickNotePart2"
         mc:Ignorable="d"
-          Title="MainWindow" Height="864" Width="1500" WindowStyle="None"
+        Title="MainWindow"
+        Height="864"
+        Width="1300"
+        WindowStyle="None"
         WindowState="Maximized">
 
     <StackPanel>
         <StackPanel.Background>
             <ImageBrush x:Name="_img_bg"
-                        ImageSource="Assets/bg.jpg"
-                        Stretch="Fill"/>
+                        ImageSource="Assets/mainBg.jpg"
+                        Stretch="Fill" />
         </StackPanel.Background>
 
-        <TextBlock
-            Margin="40"
-            HorizontalAlignment="Center"
-            Foreground="white"
-            Text="MAIN PAGE"/>
 
+        <Image x:Name="imgLogo"
+               Width="300"
+               Margin="0 20 0 0"
+               HorizontalAlignment="Center"
+               Source="Assets/logo.png" />
 
-        <Button
-            x:Name="Exit"
-            Click="Exit_Click"
-            Content="Exit"/>
+        <Image x:Name="imgClose"
+               Width="50"
+               MouseDown="imgClose_MouseDown"
+               Margin="0 -90 50 0"
+               HorizontalAlignment="Right"
+               Source="Assets/icons/delete.png" />
+
+        <Grid Margin="0 60 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <ScrollViewer Width="700"
+                          HorizontalAlignment="Left"
+                          Grid.Column="0"
+                          Grid.Row="0">
+                
+                
+                <Grid Grid.Column="2"
+                      Grid.ColumnSpan="2"
+                      Grid.Row="0"
+                      Grid.RowSpan="4"
+                      Margin="40 0 0 0">
+
+                    <DataGrid Name="dgModule"
+                              AutoGenerateColumns="True"
+                              FontSize="14">
+
+                        <DataGrid.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform>
+
+                                </ScaleTransform>
+                            </TransformGroup>
+                        </DataGrid.RenderTransform>
+                        <DataGrid.Columns>
+
+                            <DataGridTextColumn Header="Module Code"
+                                                MinWidth="100"
+                                                Binding="{Binding ModuleCode}" />
+                            <DataGridTextColumn Header="Module Name"
+                                                MinWidth="200"
+                                                Binding="{Binding ModuleName}" />
+                            <DataGridTextColumn Header="Credits"
+                                                MinWidth="80"
+                                                Binding="{Binding Credits}" />
+                            <DataGridTextColumn Header="Classes /week"
+                                                MinWidth="100"
+                                                Binding="{Binding NumWeeks}" />
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+            </ScrollViewer>
+
+            <Button x:Name="btnAddModule"
+                    Style="{StaticResource blackRounded}"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Width="200"
+                    Margin="10"
+                    FontSize="14"
+                    Content="Add Module" />
+
+        </Grid>
+
     </StackPanel>
 </Window>
