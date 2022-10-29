@@ -26,7 +26,7 @@ namespace ProgPoeTickNotePart2
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+           
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -35,6 +35,12 @@ namespace ProgPoeTickNotePart2
             MainWindow mw = new MainWindow();
             mw.Show();
             this.Hide();
+        }
+
+        private void btnSignUp_Click(object sender, RoutedEventArgs e)
+        {
+            SignUp signUp = new SignUp();
+            signUp.Show();
         }
     }
 }

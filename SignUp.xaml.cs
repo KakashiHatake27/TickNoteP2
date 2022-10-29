@@ -28,5 +28,10 @@ namespace ProgPoeTickNotePart2
         {
             Application.Current.Shutdown();
         }
+
+        private void btnSignUp_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
