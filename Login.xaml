@@ -81,8 +81,8 @@
                 Content="LOG IN" />
 
 
-        <Button x:Name="btnCancel"
-                Click="btnCancel_Click"
+        <Button x:Name="btnSignUp"
+                Click="btnSignUp_Click"
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Left"
                 Margin="140 0 0 80"
@@ -91,14 +91,15 @@
                 Style="{StaticResource blackRounded}"
                 Foreground="White"
                 Background="Black"
-                Content="CANCEL" />
+                Content="CREATE ACCOUNT" />
 
 
 
         <Label Margin="0 130 180 0"
                HorizontalAlignment="Right"
                FontSize="32"
-               Content="WELCOME TO" />
+               FontWeight="DemiBold"
+               Content="LOGIN TO" />
 
         <Image Width="400"
                HorizontalAlignment="Right"
