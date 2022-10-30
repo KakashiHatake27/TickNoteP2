@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TickNoteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="module">
+    <Key>
+      <PropertyRef Name="moduleCode" />
+    </Key>
+    <Property Name="moduleCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="moduleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="credits" Type="Int32" />
+    <Property Name="classes" Type="Int32" />
+    <NavigationProperty Name="userAccount" Relationship="Self.FK__module__userId__3D5E1FD2" FromRole="module" ToRole="userAccount" />
+    <NavigationProperty Name="studySessions" Relationship="Self.FK__studySess__modul__3F466844" FromRole="module" ToRole="studySession" />
+  </EntityType>
+  <EntityType Name="studySession">
+    <Key>
+      <PropertyRef Name="sessionId" />
+    </Key>
+    <Property Name="sessionId" Type="Int32" Nullable="false" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="studyDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="module" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hoursWorked" Type="Int32" />
+    <NavigationProperty Name="module1" Relationship="Self.FK__studySess__modul__3F466844" FromRole="studySession" ToRole="module" />
+    <NavigationProperty Name="userAccount" Relationship="Self.FK__studySess__userI__3E52440B" FromRole="studySession" ToRole="userAccount" />
+  </EntityType>
+  <EntityType Name="userAccount">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="modules" Relationship="Self.FK__module__userId__3D5E1FD2" FromRole="userAccount" ToRole="module" />
+    <NavigationProperty Name="studySessions" Relationship="Self.FK__studySess__userI__3E52440B" FromRole="userAccount" ToRole="studySession" />
+  </EntityType>
+  <Association Name="FK__module__userId__3D5E1FD2">
+    <End Role="userAccount" Type="Self.userAccount" Multiplicity="1" />
+    <End Role="module" Type="Self.module" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userAccount">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="module">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studySess__modul__3F466844">
+    <End Role="module" Type="Self.module" Multiplicity="1" />
+    <End Role="studySession" Type="Self.studySession" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="module">
+        <PropertyRef Name="moduleCode" />
+      </Principal>
+      <Dependent Role="studySession">
+        <PropertyRef Name="module" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studySess__userI__3E52440B">
+    <End Role="userAccount" Type="Self.userAccount" Multiplicity="1" />
+    <End Role="studySession" Type="Self.studySession" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userAccount">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="studySession">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TickNoteEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="modules" EntityType="Self.module" />
+    <EntitySet Name="studySessions" EntityType="Self.studySession" />
+    <EntitySet Name="userAccounts" EntityType="Self.userAccount" />
+    <AssociationSet Name="FK__module__userId__3D5E1FD2" Association="Self.FK__module__userId__3D5E1FD2">
+      <End Role="userAccount" EntitySet="userAccounts" />
+      <End Role="module" EntitySet="modules" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studySess__modul__3F466844" Association="Self.FK__studySess__modul__3F466844">
+      <End Role="module" EntitySet="modules" />
+      <End Role="studySession" EntitySet="studySessions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studySess__userI__3E52440B" Association="Self.FK__studySess__userI__3E52440B">
+      <End Role="userAccount" EntitySet="userAccounts" />
+      <End Role="studySession" EntitySet="studySessions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TickNoteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="module">
+          <Key>
+            <PropertyRef Name="moduleCode" />
+          </Key>
+          <Property Name="moduleCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="moduleName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="credits" Type="int" />
+          <Property Name="classes" Type="int" />
+        </EntityType>
+        <EntityType Name="studySession">
+          <Key>
+            <PropertyRef Name="sessionId" />
+          </Key>
+          <Property Name="sessionId" Type="int" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="studyDate" Type="date" Nullable="false" />
+          <Property Name="module" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="hoursWorked" Type="int" />
+        </EntityType>
+        <EntityType Name="userAccount">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__module__userId__3D5E1FD2">
+          <End Role="userAccount" Type="Self.userAccount" Multiplicity="1" />
+          <End Role="module" Type="Self.module" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="userAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="module">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__studySess__modul__3F466844">
+          <End Role="module" Type="Self.module" Multiplicity="1" />
+          <End Role="studySession" Type="Self.studySession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="module">
+              <PropertyRef Name="moduleCode" />
+            </Principal>
+            <Dependent Role="studySession">
+              <PropertyRef Name="module" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__studySess__userI__3E52440B">
+          <End Role="userAccount" Type="Self.userAccount" Multiplicity="1" />
+          <End Role="studySession" Type="Self.studySession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="userAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="studySession">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TickNoteModelStoreContainer">
+          <EntitySet Name="module" EntityType="Self.module" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="studySession" EntityType="Self.studySession" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="userAccount" EntityType="Self.userAccount" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__module__userId__3D5E1FD2" Association="Self.FK__module__userId__3D5E1FD2">
+            <End Role="userAccount" EntitySet="userAccount" />
+            <End Role="module" EntitySet="module" />
+          </AssociationSet>
+          <AssociationSet Name="FK__studySess__modul__3F466844" Association="Self.FK__studySess__modul__3F466844">
+            <End Role="module" EntitySet="module" />
+            <End Role="studySession" EntitySet="studySession" />
+          </AssociationSet>
+          <AssociationSet Name="FK__studySess__userI__3E52440B" Association="Self.FK__studySess__userI__3E52440B">
+            <End Role="userAccount" EntitySet="userAccount" />
+            <End Role="studySession" EntitySet="studySession" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TickNoteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="module">
+          <Key>
+            <PropertyRef Name="moduleCode" />
+          </Key>
+          <Property Name="moduleCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="moduleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="credits" Type="Int32" />
+          <Property Name="classes" Type="Int32" />
+          <NavigationProperty Name="userAccount" Relationship="Self.FK__module__userId__3D5E1FD2" FromRole="module" ToRole="userAccount" />
+          <NavigationProperty Name="studySessions" Relationship="Self.FK__studySess__modul__3F466844" FromRole="module" ToRole="studySession" />
+        </EntityType>
+        <EntityType Name="studySession">
+          <Key>
+            <PropertyRef Name="sessionId" />
+          </Key>
+          <Property Name="sessionId" Type="Int32" Nullable="false" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="studyDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="module" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hoursWorked" Type="Int32" />
+          <NavigationProperty Name="module1" Relationship="Self.FK__studySess__modul__3F466844" FromRole="studySession" ToRole="module" />
+          <NavigationProperty Name="userAccount" Relationship="Self.FK__studySess__userI__3E52440B" FromRole="studySession" ToRole="userAccount" />
+        </EntityType>
+        <EntityType Name="userAccount">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="modules" Relationship="Self.FK__module__userId__3D5E1FD2" FromRole="userAccount" ToRole="module" />
+          <NavigationProperty Name="studySessions" Relationship="Self.FK__studySess__userI__3E52440B" FromRole="userAccount" ToRole="studySession" />
+        </EntityType>
+        <Association Name="FK__module__userId__3D5E1FD2">
+          <End Role="userAccount" Type="Self.userAccount" Multiplicity="1" />
+          <End Role="module" Type="Self.module" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="userAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="module">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__studySess__modul__3F466844">
+          <End Role="module" Type="Self.module" Multiplicity="1" />
+          <End Role="studySession" Type="Self.studySession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="module">
+              <PropertyRef Name="moduleCode" />
+            </Principal>
+            <Dependent Role="studySession">
+              <PropertyRef Name="module" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__studySess__userI__3E52440B">
+          <End Role="userAccount" Type="Self.userAccount" Multiplicity="1" />
+          <End Role="studySession" Type="Self.studySession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="userAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="studySession">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TickNoteEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="modules" EntityType="Self.module" />
+          <EntitySet Name="studySessions" EntityType="Self.studySession" />
+          <EntitySet Name="userAccounts" EntityType="Self.userAccount" />
+          <AssociationSet Name="FK__module__userId__3D5E1FD2" Association="Self.FK__module__userId__3D5E1FD2">
+            <End Role="userAccount" EntitySet="userAccounts" />
+            <End Role="module" EntitySet="modules" />
+          </AssociationSet>
+          <AssociationSet Name="FK__studySess__modul__3F466844" Association="Self.FK__studySess__modul__3F466844">
+            <End Role="module" EntitySet="modules" />
+            <End Role="studySession" EntitySet="studySessions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__studySess__userI__3E52440B" Association="Self.FK__studySess__userI__3E52440B">
+            <End Role="userAccount" EntitySet="userAccounts" />
+            <End Role="studySession" EntitySet="studySessions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TickNoteModelStoreContainer" CdmEntityContainer="TickNoteEntities">
+          <EntitySetMapping Name="modules">
+            <EntityTypeMapping TypeName="TickNoteModel.module">
+              <MappingFragment StoreEntitySet="module">
+                <ScalarProperty Name="moduleCode" ColumnName="moduleCode" />
+                <ScalarProperty Name="moduleName" ColumnName="moduleName" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="credits" ColumnName="credits" />
+                <ScalarProperty Name="classes" ColumnName="classes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="studySessions">
+            <EntityTypeMapping TypeName="TickNoteModel.studySession">
+              <MappingFragment StoreEntitySet="studySession">
+                <ScalarProperty Name="sessionId" ColumnName="sessionId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="studyDate" ColumnName="studyDate" />
+                <ScalarProperty Name="module" ColumnName="module" />
+                <ScalarProperty Name="hoursWorked" ColumnName="hoursWorked" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userAccounts">
+            <EntityTypeMapping TypeName="TickNoteModel.userAccount">
+              <MappingFragment StoreEntitySet="userAccount">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

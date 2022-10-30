@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TickNoteModelStoreContainer" CdmEntityContainer="TickNoteEntities">
+    <EntitySetMapping Name="modules">
+      <EntityTypeMapping TypeName="TickNoteModel.module">
+        <MappingFragment StoreEntitySet="module">
+          <ScalarProperty Name="moduleCode" ColumnName="moduleCode" />
+          <ScalarProperty Name="moduleName" ColumnName="moduleName" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="credits" ColumnName="credits" />
+          <ScalarProperty Name="classes" ColumnName="classes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="studySessions">
+      <EntityTypeMapping TypeName="TickNoteModel.studySession">
+        <MappingFragment StoreEntitySet="studySession">
+          <ScalarProperty Name="sessionId" ColumnName="sessionId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="studyDate" ColumnName="studyDate" />
+          <ScalarProperty Name="module" ColumnName="module" />
+          <ScalarProperty Name="hoursWorked" ColumnName="hoursWorked" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userAccounts">
+      <EntityTypeMapping TypeName="TickNoteModel.userAccount">
+        <MappingFragment StoreEntitySet="userAccount">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

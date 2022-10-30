@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TickNoteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="module">
+    <Key>
+      <PropertyRef Name="moduleCode" />
+    </Key>
+    <Property Name="moduleCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="moduleName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="credits" Type="int" />
+    <Property Name="classes" Type="int" />
+  </EntityType>
+  <EntityType Name="studySession">
+    <Key>
+      <PropertyRef Name="sessionId" />
+    </Key>
+    <Property Name="sessionId" Type="int" Nullable="false" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="studyDate" Type="date" Nullable="false" />
+    <Property Name="module" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="hoursWorked" Type="int" />
+  </EntityType>
+  <EntityType Name="userAccount">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__module__userId__3D5E1FD2">
+    <End Role="userAccount" Type="Self.userAccount" Multiplicity="1" />
+    <End Role="module" Type="Self.module" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userAccount">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="module">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studySess__modul__3F466844">
+    <End Role="module" Type="Self.module" Multiplicity="1" />
+    <End Role="studySession" Type="Self.studySession" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="module">
+        <PropertyRef Name="moduleCode" />
+      </Principal>
+      <Dependent Role="studySession">
+        <PropertyRef Name="module" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studySess__userI__3E52440B">
+    <End Role="userAccount" Type="Self.userAccount" Multiplicity="1" />
+    <End Role="studySession" Type="Self.studySession" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userAccount">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="studySession">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TickNoteModelStoreContainer">
+    <EntitySet Name="module" EntityType="Self.module" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="studySession" EntityType="Self.studySession" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="userAccount" EntityType="Self.userAccount" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__module__userId__3D5E1FD2" Association="Self.FK__module__userId__3D5E1FD2">
+      <End Role="userAccount" EntitySet="userAccount" />
+      <End Role="module" EntitySet="module" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studySess__modul__3F466844" Association="Self.FK__studySess__modul__3F466844">
+      <End Role="module" EntitySet="module" />
+      <End Role="studySession" EntitySet="studySession" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studySess__userI__3E52440B" Association="Self.FK__studySess__userI__3E52440B">
+      <End Role="userAccount" EntitySet="userAccount" />
+      <End Role="studySession" EntitySet="studySession" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

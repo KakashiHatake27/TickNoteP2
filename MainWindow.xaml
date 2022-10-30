@@ -14,7 +14,7 @@
     <StackPanel>
         <StackPanel.Background>
             <ImageBrush x:Name="_img_bg"
-                        ImageSource="Assets/mainBg.jpg"
+                        ImageSource="Assets/bg6.jpg"
                         Stretch="Fill" />
         </StackPanel.Background>
 
@@ -88,6 +88,7 @@
             </ScrollViewer>
 
             <Button x:Name="btnAddModule"
+                    Click="btnAddModule_Click"
                     Style="{StaticResource blackRounded}"
                     Grid.Column="1"
                     Grid.Row="0"
@@ -98,7 +99,7 @@
                     Content="Add Module" />
 
         </Grid>
-        
+
         <Grid Margin="0 60 0 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -117,9 +118,7 @@
 
 
                 <Grid Grid.Column="2"
-                      Grid.ColumnSpan="2"
                       Grid.Row="0"
-                      Grid.RowSpan="4"
                       Margin="40 0 0 0">
 
                     <DataGrid x:Name="dgSession"
@@ -165,9 +164,50 @@
                     Width="200"
                     Margin="10"
                     FontSize="14"
-                    Content="Add Study Session" />
+                    Content="Add Study Session"
+                    Click="btnAddSession_Click" />
 
         </Grid>
+
+        <Grid Margin="50">
+            <DataGrid x:Name="dgUsers"
+                      AutoGenerateColumns="False"
+                      FontSize="14">
+
+                <DataGrid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform>
+
+                        </ScaleTransform>
+                    </TransformGroup>
+                </DataGrid.RenderTransform>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="id"
+                                        MinWidth="70"
+                                        Binding="{Binding userId}" />
+                    <DataGridTextColumn Header="username"
+                                        MinWidth="130"
+                                        Binding="{Binding username}" />
+                    <DataGridTextColumn Header="email"
+                                        MinWidth="110"
+                                        Binding="{Binding email}" />
+                    <DataGridTextColumn Header="Password"
+                                        MinWidth="100"
+                                        Binding="{Binding password}" />
+
+
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+        </Grid>
+
+        <Label x:Name="lbUserName"
+               Content="username here"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               FontSize="32" />
+
 
     </StackPanel>
 </Window>

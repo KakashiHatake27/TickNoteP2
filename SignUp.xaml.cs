@@ -31,6 +31,34 @@ namespace ProgPoeTickNotePart2
 
         private void btnSignUp_Click(object sender, RoutedEventArgs e)
         {
+
+            TickNoteEntities db = new TickNoteEntities();
+            userAccount userAccObj = new userAccount() {
+                username = tbUsername.Text,
+                email = tbEmail.Text,
+                password = tbPassword.Text
+            };
+            db.userAccounts.Add(userAccObj);    
+            db.SaveChanges();
+
+            MessageBox.Show("Account created successfully");
+
+
+            /*
+              //Create the object to the ado.net model
+            personsEntities db = new personsEntities();
+            Person personObject = new Person()
+            {
+                Name = tbName.Text,
+                Qualification = tbQualification.Text,
+                Specialization = tbFaculty.Text
+
+            };
+            db.People.Add(personObject);
+            db.SaveChanges();
+             
+             */
+
             this.Close();
         }
     }

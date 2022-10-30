@@ -34,6 +34,8 @@ namespace ProgPoeTickNotePart2
 
             MainWindow mw = new MainWindow();
             mw.Show();
+
+            mw.CurrentUser = tbUsername.Text;
             this.Hide();
         }
 
