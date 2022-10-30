@@ -20,6 +20,11 @@ namespace ProgPoeTickNotePart2
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public string CurrentUser;
+        public TickNoteEntities TNotedb = new TickNoteEntities();
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -41,6 +46,35 @@ namespace ProgPoeTickNotePart2
 
                 Application.Current.Shutdown();
             }
+        }
+
+        private void btnAddModule_Click(object sender, RoutedEventArgs e)
+        {
+     
+            var users = from d in TNotedb.userAccounts
+                        select d;
+
+            this.dgUsers.ItemsSource = users.ToList();
+            MessageBox.Show("Got db");
+
+            MessageBox.Show("Done!!");
+            lbUserName.Content = CurrentUser;
+            
+            /*
+             
+                    //testing the connection to the ADO.NEt of DB set 
+            personsEntities db = new personsEntities();
+            //pull the data
+            var persons = from d in db.People
+                          select d;
+            this.dgStudents.ItemsSource = persons.ToList();
+             */
+
+        }
+
+        private void btnAddSession_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

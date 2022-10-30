@@ -43,6 +43,14 @@ namespace ProgPoeTickNotePart2
 
             pbLoad.Value = pbLoad.Value + 34;
 
+            if (timer == 2) 
+            { 
+            TickNoteDataSet tickNote = new TickNoteDataSet();
+            
+            }
+
+
+
             if (timer == 4)
             {
                 Login login = new Login();

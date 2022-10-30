@@ -21,3 +21,13 @@ C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\obj\Debug\Login.g.cs
 C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\obj\Debug\Login.baml
 C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\obj\Debug\SignUp.g.cs
 C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\obj\Debug\SignUp.baml
+C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\bin\Debug\TickNote.mdf
+C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\bin\Debug\TickNote_log.ldf
+C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\bin\Debug\EntityFramework.dll
+C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\bin\Debug\EntityFramework.xml
+C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\obj\Debug\ProgPoeTickNotePart2_Content.g.cs
+C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\obj\Debug\ProgPoeTickNotePart2.csproj.CopyComplete
+C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\obj\Debug\AddModule.g.cs
+C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2\obj\Debug\AddModule.baml
