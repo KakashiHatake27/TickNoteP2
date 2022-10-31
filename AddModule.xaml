@@ -7,12 +7,38 @@
         mc:Ignorable="d"
         Title="AddModule"
         Height="450"
-        Width="800">
-    <Grid>
-        <Label x:Name="lbName"
-               Content="Text here"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center"
-               FontSize="32" />
-    </Grid>
+        WindowStartupLocation="CenterScreen"
+        Width="600">
+
+    <StackPanel Margin="40">
+
+        <Label Content="Module Code" />
+
+        <TextBox x:Name="tbModuleCode" />
+
+        <Label Content="Module Name" />
+
+        <TextBox x:Name="tbModuleName" />
+
+
+        <Label Content="Credits" />
+
+        <TextBox x:Name="tbCredits" />
+
+        <Label Content="Classes" />
+
+        <TextBox x:Name="tbClasses" />
+
+
+        <Button x:Name="btnAddModule"
+                Click="btnAddModule_Click"
+                Margin="50"
+                Width="300"
+                Style="{StaticResource blackRounded}"
+                Content="Add Module" />
+
+
+
+    </StackPanel>
+
 </Window>

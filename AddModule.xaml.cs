@@ -19,9 +19,45 @@ namespace ProgPoeTickNotePart2
     /// </summary>
     public partial class AddModule : Window
     {
+
+        public int userId;
+
+
+
         public AddModule()
         {
             InitializeComponent();
+        }
+
+
+
+        private void btnAddModule_Click(object sender, RoutedEventArgs e)
+        {
+            tbModuleCode.Text = userId.ToString();
+
+
+
+            MessageBox.Show("User id: " + userId.ToString());
+
+            //TickNoteEntities db = new TickNoteEntities();
+            //module moduleObj = new module()
+            //{
+            //    moduleCode = tbModuleCode.Text,
+            //    moduleName = tbModuleName.Text,
+            //    userId = userId,
+            //    credits = Convert.ToInt32(tbCredits.Text),
+            //    classes = Convert.ToInt32(tbClasses.Text)
+            //};
+
+            //db.modules.Add(moduleObj);
+            //db.SaveChanges();
+
+
+
+            MessageBox.Show("Module added successfully");
+            this.Close();
+
+
         }
     }
 }

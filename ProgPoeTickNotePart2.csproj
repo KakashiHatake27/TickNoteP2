@@ -231,8 +231,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\rand\l.jpg" />
-    <Resource Include="Assets\rand\k.jpg" />
     <Resource Include="Assets\bg6.jpg" />
     <Resource Include="Assets\bg5.jpg" />
     <Resource Include="Assets\bg2.jpg" />

@@ -22,6 +22,7 @@ namespace ProgPoeTickNotePart2
     
         public string moduleCode { get; set; }
         public string moduleName { get; set; }
+        
         public int userId { get; set; }
         public Nullable<int> credits { get; set; }
         public Nullable<int> classes { get; set; }

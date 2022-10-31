@@ -44,21 +44,6 @@ namespace ProgPoeTickNotePart2
             MessageBox.Show("Account created successfully");
 
 
-            /*
-              //Create the object to the ado.net model
-            personsEntities db = new personsEntities();
-            Person personObject = new Person()
-            {
-                Name = tbName.Text,
-                Qualification = tbQualification.Text,
-                Specialization = tbFaculty.Text
-
-            };
-            db.People.Add(personObject);
-            db.SaveChanges();
-             
-             */
-
             this.Close();
         }
     }
