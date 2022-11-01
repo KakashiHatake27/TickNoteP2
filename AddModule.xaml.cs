@@ -23,5 +23,32 @@ namespace ProgPoeTickNotePart2
         {
             InitializeComponent();
         }
+
+
+
+        public int userId;
+
+        private void btnAddModule_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("User id: " + userId.ToString());
+
+            TickNoteEntities db = new TickNoteEntities();
+            module moduleObj = new module()
+            {
+                moduleCode = tbModuleCode.Text,
+                moduleName = tbModuleName.Text,
+                userId = userId,
+                credits = Convert.ToInt32(tbCredits.Text),
+                classes = Convert.ToInt32(tbClasses.Text)
+            };
+
+            db.modules.Add(moduleObj);
+            db.SaveChanges();
+
+
+
+            MessageBox.Show("Module added successfully");
+            this.Close();
+        }
     }
 }

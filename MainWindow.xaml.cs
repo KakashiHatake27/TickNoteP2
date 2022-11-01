@@ -50,7 +50,10 @@ namespace ProgPoeTickNotePart2
 
         private void btnAddModule_Click(object sender, RoutedEventArgs e)
         {
-     
+
+            TickNoteEntities TNotedb = new TickNoteEntities();
+
+
             var users = from d in TNotedb.userAccounts
                         select d;
 
@@ -59,16 +62,22 @@ namespace ProgPoeTickNotePart2
 
             MessageBox.Show("Done!!");
             lbUserName.Content = CurrentUser;
-            
-            /*
-             
-                    //testing the connection to the ADO.NEt of DB set 
-            personsEntities db = new personsEntities();
-            //pull the data
-            var persons = from d in db.People
-                          select d;
-            this.dgStudents.ItemsSource = persons.ToList();
-             */
+
+            //this.dgModules2.ItemsSource = users.ToList();
+
+
+            //MessageBox.Show("Done!!");
+            //AddModule addModule = new AddModule();
+
+            //user = TNotedb.userAccounts.Where(x => x.username == CurrentUser).FirstOrDefault();
+            //addModule.userId = user.userId;
+            //addModule.Show();
+
+            //MessageBox.Show(user.userId.ToString());
+
+            //var modules = from m in TNotedb.modules
+            //              select m;
+            //this.dgModule.ItemsSource = modules.ToList();
 
         }
 

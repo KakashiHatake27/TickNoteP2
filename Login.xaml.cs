@@ -24,10 +24,6 @@ namespace ProgPoeTickNotePart2
             InitializeComponent();
         }
 
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
-        {
-           
-        }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
@@ -36,6 +32,13 @@ namespace ProgPoeTickNotePart2
             {
                 return;
             }
+
+            TickNoteEntities TNotedb = new TickNoteEntities();
+
+           var user = TNotedb.userAccounts.Where(x => x.username == CurrentUser).FirstOrDefault();
+            //addModule.userId = user.userId;
+            //addModule.Show();
+
 
 
             MainWindow mw = new MainWindow();
