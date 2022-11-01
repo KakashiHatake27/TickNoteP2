@@ -9,10 +9,13 @@ namespace ProgPoeTickNotePart2
 {
     internal class MainClass
     {
+        public MainClass()
+        {
+        }
 
 
         //md5 method --> mixed up with utf8 encoding
-       public string Encrypt(string value)
+        public string Encrypt(string value)
         {
             using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
             {
