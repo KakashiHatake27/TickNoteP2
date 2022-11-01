@@ -25,7 +25,7 @@ namespace ProgPoeTickNotePart2
         userAccount user = new userAccount();
 
 
-        public TickNoteEntities TNotedb = new TickNoteEntities();
+       TickNoteEntities TNotedb = new TickNoteEntities();
 
 
         public MainWindow()
@@ -54,7 +54,7 @@ namespace ProgPoeTickNotePart2
 
         private void btnAddModule_Click(object sender, RoutedEventArgs e)
         {
-
+            TickNoteEntities TNotedb = new TickNoteEntities();
 
             lbUserName.Content = CurrentUser;
 
@@ -66,12 +66,15 @@ namespace ProgPoeTickNotePart2
             this.dgUsers.ItemsSource = users.ToList();
             MessageBox.Show("Got db");
 
-            MessageBox.Show("Done!!");
-            AddModule addModule = new AddModule();
+            //this.dgModules2.ItemsSource = users.ToList();
+
+
+            //MessageBox.Show("Done!!");
+            //AddModule addModule = new AddModule();
  
-            user = TNotedb.userAccounts.Where(x => x.username == CurrentUser).FirstOrDefault();
-            addModule.userId = user.userId;
-            addModule.Show();
+            //user = TNotedb.userAccounts.Where(x => x.username == CurrentUser).FirstOrDefault();
+            //addModule.userId = user.userId;
+            //addModule.Show();
 
             //MessageBox.Show(user.userId.ToString());
 
@@ -98,8 +101,18 @@ namespace ProgPoeTickNotePart2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            TickNoteEntities TNotedb = new TickNoteEntities();
+            this.dgModules.ItemsSource = TNotedb.modules.ToList();
 
+            this.dgModules2.ItemsSource = TNotedb.modules.ToList();
+        }
+
+
+
+        public static async void updateModules() {
+            TickNoteEntities TNotedb = new TickNoteEntities();
             this.dgModules.ItemsSource = TNotedb.modules.ToList();
         }
+
     }
 }

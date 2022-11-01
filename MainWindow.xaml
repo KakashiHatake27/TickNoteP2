@@ -42,19 +42,51 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
             <ScrollViewer Width="700"
                           HorizontalAlignment="Left"
                           Grid.Column="0"
                           Grid.ColumnSpan="2"
-                          Grid.Row="0">
+                          Grid.Row="0"
+                          Grid.RowSpan="4">
 
 
+                <DataGrid x:Name="dgModules"
+                          Margin="40 0 0 0">
+
+                    <DataGrid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform>
+
+                            </ScaleTransform>
+                        </TransformGroup>
+                    </DataGrid.RenderTransform>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="module Code"
+                                            MinWidth="70"
+                                            Binding="{Binding moduleCode}" />
+                        <DataGridTextColumn Header="module name"
+                                            MinWidth="130"
+                                            Binding="{Binding moduleName}" />
+
+                        <DataGridTextColumn Header="credits"
+                                            MinWidth="100"
+                                            Binding="{Binding credits}" />
+
+                        <DataGridTextColumn Header="credits"
+                                            MinWidth="100"
+                                            Binding="{Binding credits}" />
+
+                        <DataGridTextColumn Header="classes"
+                                            MinWidth="100"
+                                            Binding="{Binding classes}" />
 
 
-
-                <DataGrid x:Name="dgModules" Margin="40 0 0 0" />
+                    </DataGrid.Columns>
+                </DataGrid>
 
             </ScrollViewer>
 
@@ -75,9 +107,12 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
@@ -85,7 +120,9 @@
             <ScrollViewer Width="700"
                           HorizontalAlignment="Left"
                           Grid.Column="0"
-                          Grid.Row="0">
+                          Grid.ColumnSpan="2"
+                          Grid.Row="0"
+                          Grid.RowSpan="4">
 
 
                 <Grid Grid.Column="2"
@@ -129,7 +166,7 @@
 
             <Button x:Name="btnAddSession"
                     Style="{StaticResource blackRounded}"
-                    Grid.Column="1"
+                    Grid.Column="2"
                     Grid.Row="0"
                     Grid.RowSpan="2"
                     Width="200"
@@ -182,6 +219,43 @@
 
         <Button Click="Button_Click"
                 Content="load MOdule db" />
+
+
+        <DataGrid x:Name="dgModules2"
+                  AutoGenerateColumns="False"
+                  FontSize="14">
+
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform>
+
+                    </ScaleTransform>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="module Code"
+                                    MinWidth="70"
+                                    Binding="{Binding moduleCode}" />
+                <DataGridTextColumn Header="module name"
+                                    MinWidth="130"
+                                    Binding="{Binding moduleName}" />
+
+                <DataGridTextColumn Header="credits"
+                                    MinWidth="100"
+                                    Binding="{Binding credits}" />
+
+                <DataGridTextColumn Header="credits"
+                                    MinWidth="100"
+                                    Binding="{Binding credits}" />
+
+                <DataGridTextColumn Header="classes"
+                                    MinWidth="100"
+                                    Binding="{Binding classes}" />
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+
 
 
     </StackPanel>
