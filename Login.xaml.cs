@@ -25,8 +25,12 @@ namespace ProgPoeTickNotePart2
         }
 
 
+
+
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+
+            MainClass mc = new MainClass();
 
             if (!validateInputs())
             {
@@ -35,17 +39,32 @@ namespace ProgPoeTickNotePart2
 
             TickNoteEntities TNotedb = new TickNoteEntities();
 
-           var user = TNotedb.userAccounts.Where(x => x.username == CurrentUser).FirstOrDefault();
-            //addModule.userId = user.userId;
-            //addModule.Show();
 
+            var user = TNotedb.userAccounts.Where(x => x.username == tbUsername.Text).FirstOrDefault();
 
+            if (user != null)
+            {
+                if (user.password == mc.Encrypt(tbPassword.Text))
+                {
+                    MainWindow mw = new MainWindow();
+                    mw.Show();
 
-            MainWindow mw = new MainWindow();
-            mw.Show();
+                    mw.CurrentUser = tbUsername.Text;
+                    this.Hide();
+                }
+                else
+                {
 
-            mw.CurrentUser = tbUsername.Text;
-            this.Hide();
+                    MessageBox.Show("Incorrect Password, Please try again!", "Incorrect Password", MessageBoxButton.OK, MessageBoxImage.Stop);
+
+               
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("This User does not exist!", "Username not found", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
         }
 
         private void btnSignUp_Click(object sender, RoutedEventArgs e)
@@ -54,7 +73,8 @@ namespace ProgPoeTickNotePart2
             signUp.Show();
         }
 
-        public bool validateInputs() {
+        public bool validateInputs()
+        {
             bool result = true;
 
             if (string.IsNullOrEmpty(tbUsername.Text))
