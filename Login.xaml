@@ -40,7 +40,8 @@
               Y1="100"
               Y2="470" />
 
-        <Label Margin="100 120 0 0"
+        <Label x:Name="lblUsername" 
+            Margin="100 120 0 0"
                FontSize="20"
                Content="USERNAME" />
 
@@ -53,7 +54,8 @@
                  FontSize="20" />
 
 
-        <Label Margin="100 230 0 0"
+        <Label x:Name="lblPassword" 
+            Margin="100 230 0 0"
                FontSize="20"
                Content="PASSWORD" />
 

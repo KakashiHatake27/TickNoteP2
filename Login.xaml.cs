@@ -32,6 +32,12 @@ namespace ProgPoeTickNotePart2
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
 
+            if (!validateInputs())
+            {
+                return;
+            }
+
+
             MainWindow mw = new MainWindow();
             mw.Show();
 
@@ -44,5 +50,27 @@ namespace ProgPoeTickNotePart2
             SignUp signUp = new SignUp();
             signUp.Show();
         }
+
+        public bool validateInputs() {
+            bool result = true;
+
+            if (string.IsNullOrEmpty(tbUsername.Text))
+            {
+                lblUsername.Foreground = new SolidColorBrush(Colors.Red);
+                lblUsername.Content = "Please enter a valid username";
+                result = false;
+            }
+
+            if (string.IsNullOrEmpty(tbPassword.Text))
+            {
+                lblPassword.Foreground = new SolidColorBrush(Colors.Red);
+                lblPassword.Content = "Please enter a valid password";
+                result = false;
+            }
+
+            return result;
+
+        }
+
     }
 }
