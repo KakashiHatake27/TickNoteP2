@@ -85,6 +85,7 @@
     <Compile Include="AddModule.xaml.cs">
       <DependentUpon>AddModule.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainClass.cs" />
     <Compile Include="module.cs">
       <DependentUpon>TickNoteEntityModel.tt</DependentUpon>
     </Compile>

@@ -29,37 +29,101 @@ namespace ProgPoeTickNotePart2
             Application.Current.Shutdown();
         }
 
+        MainClass mc = new MainClass();
+
         private void btnSignUp_Click(object sender, RoutedEventArgs e)
         {
+            if (!checkInputs()) { return; }
+            //MessageBox.Show(mc.Encrypt(tbPassword.Text));
 
             TickNoteEntities db = new TickNoteEntities();
-            userAccount userAccObj = new userAccount() {
+            userAccount userAccObj = new userAccount()
+            {
                 username = tbUsername.Text,
                 email = tbEmail.Text,
-                password = tbPassword.Text
+                password = mc.Encrypt(tbPassword.Text)
             };
-            db.userAccounts.Add(userAccObj);    
+            db.userAccounts.Add(userAccObj);
             db.SaveChanges();
 
             MessageBox.Show("Account created successfully");
 
-
-            /*
-              //Create the object to the ado.net model
-            personsEntities db = new personsEntities();
-            Person personObject = new Person()
-            {
-                Name = tbName.Text,
-                Qualification = tbQualification.Text,
-                Specialization = tbFaculty.Text
-
-            };
-            db.People.Add(personObject);
-            db.SaveChanges();
-             
-             */
-
             this.Close();
         }
+
+        public bool isEmailValid(string email)
+        {
+            if (string.IsNullOrEmpty(tbEmail.Text))
+            {
+                return false;
+            }
+            else
+            {
+
+                int counter = 0;
+                for (int i = 0; i < email.Length; i++)
+                {
+                    if (email[i] == '@')
+                    {
+                        counter++;
+                    }
+                    else if (email[i] == '.')
+                    {
+                        counter++;
+                    }
+                }
+
+
+                if (counter == 2)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+
+
+
+        public bool checkInputs()
+        {
+            bool result = true;
+
+            if (string.IsNullOrEmpty(tbUsername.Text))
+            {
+                lblUsername.Foreground = new SolidColorBrush(Colors.Red);
+                lblUsername.Content = "Please enter a valid username";
+                result = false;
+            }
+
+            if (!isEmailValid(tbEmail.Text))
+            {
+                lblEmail.Foreground = new SolidColorBrush(Colors.Red);
+                lblEmail.Content = "Please enter a valid email address";
+                result = false;
+            }
+
+            if (string.IsNullOrEmpty(tbPassword.Text))
+            {
+                lblPassword.Foreground = new SolidColorBrush(Colors.Red);
+                lblPassword.Content = "Please enter a password";
+                result = false;
+            }
+
+            if (tbConfirmPassword.Text != tbPassword.Text)
+            {
+                lblConfirmPassword.Foreground = new SolidColorBrush(Colors.Red);
+                lblConfirmPassword.Content = "Passwords do not match";
+                result = false;
+            }
+            
+
+            return result;
+
+        }
+
     }
 }

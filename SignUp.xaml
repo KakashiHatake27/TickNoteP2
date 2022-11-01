@@ -40,7 +40,8 @@
               Y1="100"
               Y2="530" />
 
-        <Label Margin="100 60 0 0"
+        <Label x:Name="lblUsername"
+            Margin="100 60 0 0"
                FontSize="20"
                Content="USERNAME" />
 
@@ -52,7 +53,8 @@
                  Width="280"
                  FontSize="20" />
         
-        <Label Margin="100 150 0 0"
+        <Label x:Name="lblEmail"
+            Margin="100 150 0 0"
                FontSize="20"
                Content="EMAIL" />
 
@@ -65,7 +67,8 @@
                  FontSize="20" />
 
 
-        <Label Margin="100 240 0 0"
+        <Label x:Name="lblPassword"
+            Margin="100 240 0 0"
                FontSize="20"
                Content="PASSWORD" />
 
@@ -78,7 +81,8 @@
                  FontSize="20" />
 
 
-        <Label Margin="100 320 0 0"
+        <Label x:Name="lblConfirmPassword" 
+            Margin="100 320 0 0"
                FontSize="20"
                Content="CONFIRM PASSWORD" />
 
