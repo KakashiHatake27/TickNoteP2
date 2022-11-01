@@ -24,6 +24,23 @@
         </LinearGradientBrush>
 
 
+        <Style TargetType="TextBox"
+               x:Key="FancyText">
+            <Setter Property="FontWeight" Value="Medium" />
+
+
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="Foreground"
+                    Value="White" />
+            <Setter Property="CaretBrush"
+                    Value="LightGray" />
+            <Setter Property="BorderBrush"
+                    Value="DarkGray" />
+            <Setter Property="BorderThickness"
+                    Value="0, 0, 0, 2" />
+        </Style>
+
 
         <Style TargetType="Button"
                x:Key="WindowButtons">

@@ -54,30 +54,20 @@ namespace ProgPoeTickNotePart2
             TickNoteEntities TNotedb = new TickNoteEntities();
 
 
-            var users = from d in TNotedb.userAccounts
-                        select d;
 
-            this.dgUsers.ItemsSource = users.ToList();
-            MessageBox.Show("Got db");
+         
+            AddModule addModule = new AddModule();
 
-            MessageBox.Show("Done!!");
-            lbUserName.Content = CurrentUser;
-
-            //this.dgModules2.ItemsSource = users.ToList();
-
-
-            //MessageBox.Show("Done!!");
-            //AddModule addModule = new AddModule();
-
-            //user = TNotedb.userAccounts.Where(x => x.username == CurrentUser).FirstOrDefault();
+            //var user = TNotedb.userAccounts.Where(x => x.username == CurrentUser).FirstOrDefault();
             //addModule.userId = user.userId;
-            //addModule.Show();
+            addModule.ShowDialog();
 
-            //MessageBox.Show(user.userId.ToString());
 
-            //var modules = from m in TNotedb.modules
-            //              select m;
-            //this.dgModule.ItemsSource = modules.ToList();
+            //TickNoteEntities TNotedb = new TickNoteEntities();
+
+            var modules = from m in TNotedb.modules
+                          select m;
+            this.dgModule.ItemsSource = modules.ToList();
 
         }
 

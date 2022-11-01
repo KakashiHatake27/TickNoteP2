@@ -1,0 +1,96 @@
+﻿<Window x:Class="ProgPoeTickNotePart2.AddSession"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProgPoeTickNotePart2"
+        mc:Ignorable="d"
+        Title="AddSession"
+        Height="650"
+        Width="550"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="">
+
+    <Border CornerRadius="50"
+            BorderThickness="5">
+        <Border.Background>
+            <ImageBrush x:Name="_img_bg"
+                        ImageSource="Assets/bg7.jpg"
+                        Stretch="Fill" />
+        </Border.Background>
+
+        <StackPanel Margin="60 50 60 60">
+
+
+            <Label FontSize="16"
+                   Margin="0 0 0 0"
+                   Content="Module Code" />
+
+            <TextBox FontSize="16"
+                     Margin="0 10 0 0"
+                     Style="{StaticResource FancyText}"
+                     Foreground="Black"
+                     x:Name="tbModuleCode" />
+
+            <Label FontSize="16"
+                   Margin="0 20 0 0"
+                   Content="Date of study" />
+
+            <DatePicker  FontSize="16"
+                                Margin="0 10 0 0" />
+
+
+            <TextBox FontSize="16"
+                     Margin="0 10 0 0"
+                     Style="{StaticResource FancyText}"
+                     Foreground="Black"
+                     x:Name="tbModuleName" />
+
+
+            <Label FontSize="16"
+                   Margin="0 20 0 0"
+                   Content="Module studying" />
+
+            <TextBox FontSize="16"
+                     Margin="0 10 0 0"
+                     Style="{StaticResource FancyText}"
+                     Foreground="Black"
+                     x:Name="tbCredits" />
+
+            <Label FontSize="16"
+                   Margin="0 20 0 0"
+                   Content="Hours Studied" />
+
+            <TextBox FontSize="16"
+                     Margin="0 10 0 0"
+                     Style="{StaticResource FancyText}"
+                     Foreground="Black"
+                     x:Name="tbClasses" />
+
+
+            <Button x:Name="btnAddModule"
+                    Click="btnAddModule_Click"
+                    Margin="0 50 0 0"
+                    FontSize="16"
+                    Width="300"
+                    Style="{StaticResource blackRounded}"
+                    Content="Add Module" />
+
+            <Button x:Name="btnClose"
+                    Click="btnClose_Click"
+                    Margin="0 10 0 0"
+                    FontSize="16"
+                    Width="300"
+                    Style="{StaticResource blackRounded}"
+                    Content="Cancel" />
+
+
+
+        </StackPanel>
+    </Border>
+</Window>
+

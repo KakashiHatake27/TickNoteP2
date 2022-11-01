@@ -6,38 +6,87 @@
         xmlns:local="clr-namespace:ProgPoeTickNotePart2"
         mc:Ignorable="d"
         Title="AddModule"
-        Height="450"
+        Height="650"
+        Width="550"
         WindowStartupLocation="CenterScreen"
-        Width="600">
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
 
-    <StackPanel Margin="40">
+    <Border
+        CornerRadius="50"
+        BorderThickness="5">
+        <Border.Background>
+            <ImageBrush x:Name="_img_bg"
+                        ImageSource="Assets/bg5.jpg"
+                        Stretch="Fill" />
+        </Border.Background>
 
-        <Label Content="Module Code" />
-
-        <TextBox x:Name="tbModuleCode" />
-
-        <Label Content="Module Name" />
-
-        <TextBox x:Name="tbModuleName" />
-
-
-        <Label Content="Credits" />
-
-        <TextBox x:Name="tbCredits" />
-
-        <Label Content="Classes" />
-
-        <TextBox x:Name="tbClasses" />
+        <StackPanel Margin="60">
 
 
-        <Button x:Name="btnAddModule"
-                Click="btnAddModule_Click"
-                Margin="50"
-                Width="300"
-                Style="{StaticResource blackRounded}"
-                Content="Add Module" />
+            <Label FontSize="16"
+                   Margin="0 0 0 0"
+                   Content="Module Code" />
+
+            <TextBox FontSize="16"
+                     Margin="0 10 0 0"
+                     Style="{StaticResource FancyText}"
+                     Foreground="Black"
+                     x:Name="tbModuleCode" />
+
+            <Label FontSize="16"
+                   Margin="0 20 0 0"
+                   Content="Module Name" />
+
+            <TextBox FontSize="16"
+                     Margin="0 10 0 0"
+                     Style="{StaticResource FancyText}"
+                     Foreground="Black"
+                     x:Name="tbModuleName" />
+
+
+            <Label FontSize="16"
+                   Margin="0 20 0 0"
+                   Content="Credits" />
+
+            <TextBox FontSize="16"
+                     Margin="0 10 0 0"
+                     Style="{StaticResource FancyText}"
+                     Foreground="Black"
+                     x:Name="tbCredits" />
+
+            <Label FontSize="16"
+                   Margin="0 20 0 0"
+                   Content="Classes" />
+
+            <TextBox FontSize="16"
+                     Margin="0 10 0 0"
+                     Style="{StaticResource FancyText}"
+                     Foreground="Black"
+                     x:Name="tbClasses" />
+
+
+            <Button x:Name="btnAddModule"
+                    Click="btnAddModule_Click"
+                    Margin="0 50 0 0"
+                    FontSize="16"
+                    Width="300"
+                    Style="{StaticResource blackRounded}"
+                    Content="Add Module" />
+
+            <Button x:Name="btnClose"
+                    Click="btnClose_Click"
+                    Margin="0 10 0 0"
+                    FontSize="16"
+                    Width="300"
+                    Style="{StaticResource blackRounded}"
+                    Content="Cancel" />
 
 
 
-    </StackPanel>
+        </StackPanel>
+    </Border>
 </Window>

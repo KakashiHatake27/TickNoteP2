@@ -30,6 +30,17 @@ namespace ProgPoeTickNotePart2
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
 
+
+            MainWindow mw = new MainWindow();
+            mw.Show();
+
+            mw.CurrentUser = tbUsername.Text;
+            this.Hide();
+
+
+
+            /*
+
             MainClass mc = new MainClass();
 
             if (!validateInputs())
@@ -65,6 +76,8 @@ namespace ProgPoeTickNotePart2
             {
                 MessageBox.Show("This User does not exist!", "Username not found", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
+
+            */
         }
 
         private void btnSignUp_Click(object sender, RoutedEventArgs e)

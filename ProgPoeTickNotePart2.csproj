@@ -85,6 +85,9 @@
     <Compile Include="AddModule.xaml.cs">
       <DependentUpon>AddModule.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddSession.xaml.cs">
+      <DependentUpon>AddSession.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainClass.cs" />
     <Compile Include="module.cs">
       <DependentUpon>TickNoteEntityModel.tt</DependentUpon>
@@ -119,6 +122,10 @@
       <DependentUpon>TickNoteEntityModel.tt</DependentUpon>
     </Compile>
     <Page Include="AddModule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddSession.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -232,13 +239,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\rand\l.jpg" />
-    <Resource Include="Assets\rand\k.jpg" />
     <Resource Include="Assets\bg6.jpg" />
     <Resource Include="Assets\bg5.jpg" />
     <Resource Include="Assets\bg2.jpg" />
     <Resource Include="Assets\bg3.jpg" />
     <Resource Include="Assets\bg4.jpg" />
+    <Resource Include="Assets\bg7.jpg" />
     <Content Include="TickNote.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

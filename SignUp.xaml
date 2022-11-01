@@ -49,6 +49,7 @@
                  Margin="100 100 0 0"
                  VerticalAlignment="Top"
                  HorizontalAlignment="Left"
+                 Style="{StaticResource FancyText}"
                  Height="30"
                  Width="280"
                  FontSize="20" />
@@ -62,6 +63,7 @@
                  Margin="100 190 0 0"
                  VerticalAlignment="Top"
                  HorizontalAlignment="Left"
+                 Style="{StaticResource FancyText}"
                  Height="30"
                  Width="280"
                  FontSize="20" />
@@ -76,6 +78,7 @@
                  Margin="100 280 0 0"
                  VerticalAlignment="Top"
                  HorizontalAlignment="Left"
+                 Style="{StaticResource FancyText}"
                  Height="30"
                  Width="280"
                  FontSize="20" />
@@ -90,6 +93,7 @@
                  Margin="100 360 0 0"
                  VerticalAlignment="Top"
                  HorizontalAlignment="Left"
+                 Style="{StaticResource FancyText}"
                  Height="30"
                  Width="280"
                  FontSize="20" />

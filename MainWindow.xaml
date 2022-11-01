@@ -57,7 +57,7 @@
 
                     <DataGrid Name="dgModule"
                               AutoGenerateColumns="True"
-                              FontSize="14">
+                              FontSize="16">
 
                         <DataGrid.RenderTransform>
                             <TransformGroup>
@@ -69,7 +69,7 @@
                         <DataGrid.Columns>
 
                             <DataGridTextColumn Header="Module Code"
-                                                MinWidth="100"
+                                                MinWidth="110"
                                                 Binding="{Binding ModuleCode}" />
                             <DataGridTextColumn Header="Module Name"
                                                 MinWidth="200"
@@ -81,7 +81,9 @@
                                                 MinWidth="100"
                                                 Binding="{Binding NumWeeks}" />
 
+
                         </DataGrid.Columns>
+
                     </DataGrid>
                 </Grid>
 
@@ -169,44 +171,6 @@
 
         </Grid>
 
-        <Grid Margin="50">
-            <DataGrid x:Name="dgUsers"
-                      AutoGenerateColumns="False"
-                      FontSize="14">
-
-                <DataGrid.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform>
-
-                        </ScaleTransform>
-                    </TransformGroup>
-                </DataGrid.RenderTransform>
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="id"
-                                        MinWidth="70"
-                                        Binding="{Binding userId}" />
-                    <DataGridTextColumn Header="username"
-                                        MinWidth="130"
-                                        Binding="{Binding username}" />
-                    <DataGridTextColumn Header="email"
-                                        MinWidth="110"
-                                        Binding="{Binding email}" />
-                    <DataGridTextColumn Header="Password"
-                                        MinWidth="100"
-                                        Binding="{Binding password}" />
-
-
-                </DataGrid.Columns>
-            </DataGrid>
-
-
-        </Grid>
-
-        <Label x:Name="lbUserName"
-               Content="username here"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center"
-               FontSize="32" />
 
 
     </StackPanel>
