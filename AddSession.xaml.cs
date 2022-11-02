@@ -43,31 +43,10 @@ namespace ProgPoeTickNotePart2
 
         private void btnAddSession_Click(object sender, RoutedEventArgs e)
         {
-
-
-
-            //MessageBox.Show("User id: " + userId.ToString());
-
             saveSession();
 
-            //TickNoteEntities db = new TickNoteEntities();
-            //module moduleObj = new module()
-            //{
-            //    moduleCode = tbModuleCode.Text,
-            //    moduleName = tbModuleName.Text,
-            //    userId = userId,
-            //    credits = Convert.ToInt32(tbCredits.Text),
-            //    classes = Convert.ToInt32(tbClasses.Text)
-            //};
-
-            //db.modules.Add(moduleObj);
-            //db.SaveChanges();
-
-
-
-            //MessageBox.Show("Module added successfully");
-            //this.Close();
-
+            MessageBox.Show("Session added successfully");
+            this.Close();   
         }
 
 
@@ -80,7 +59,7 @@ namespace ProgPoeTickNotePart2
             {
                 userId = userId,
                 studyDate = dpStudyDate.DisplayDate,
-                module = tbModule.Text,
+                module = tbModuleCode.Text,
                 hoursWorked = Convert.ToInt32(tbHours.Text)
             };
 

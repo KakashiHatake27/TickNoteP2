@@ -28,9 +28,9 @@ namespace ProgPoeTickNotePart2
 
         public int userId;
 
-        private void btnAddModule_Click(object sender, RoutedEventArgs e)
+
+        public async void saveModule()
         {
-            MessageBox.Show("User id: " + userId.ToString());
 
             TickNoteEntities db = new TickNoteEntities();
             module moduleObj = new module()
@@ -43,9 +43,14 @@ namespace ProgPoeTickNotePart2
             };
 
             db.modules.Add(moduleObj);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
+        }
 
 
+        private void btnAddModule_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("User id: " + userId.ToString());
+            saveModule();
 
             MessageBox.Show("Module added successfully");
             this.Close();
