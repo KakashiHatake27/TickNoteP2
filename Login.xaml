@@ -17,6 +17,17 @@
                         ImageSource="Assets/lockScreenBg.png"
                         Stretch="Fill" />
         </Grid.Background>
+
+
+        <Image x:Name="imgClose" 
+               MouseDown="imgClose_MouseDown"
+            Source="Assets/icons/close.png"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Top"
+               Width="40"
+               Margin="0 20 20 0" />
+
+
         <Border ClipToBounds="True"
                 CornerRadius="50"
                 Margin="0 20 0 0"
@@ -40,8 +51,8 @@
               Y1="100"
               Y2="470" />
 
-        <Label x:Name="lblUsername" 
-            Margin="100 120 0 0"
+        <Label x:Name="lblUsername"
+               Margin="100 120 0 0"
                FontSize="20"
                Content="USERNAME" />
 
@@ -52,22 +63,38 @@
                  Height="30"
                  Style="{StaticResource FancyText}"
                  Width="280"
-                 FontSize="20" />
+                 FontSize="20"
+                 Padding="20 0 0 0">
+            <TextBox.Background>
+                <ImageBrush ImageSource="Assets/icons/user-icon.png"
+                            Stretch="None"
+                            AlignmentX="Left" />
+            </TextBox.Background>
+
+        </TextBox>
 
 
-        <Label x:Name="lblPassword" 
-            Margin="100 230 0 0"
+        <Label x:Name="lblPassword"
+               Margin="100 230 0 0"
                FontSize="20"
                Content="PASSWORD" />
 
-        <TextBox x:Name="tbPassword"
-                 Margin="100 270 0 0"
-                 VerticalAlignment="Top"
-                 HorizontalAlignment="Left"
-                 Style="{StaticResource FancyText}"
-                 Height="30"
-                 Width="280"
-                 FontSize="20" />
+        <PasswordBox x:Name="tbPassword"
+                     Margin="100 270 0 0"
+                     VerticalAlignment="Top"
+                     HorizontalAlignment="Left"
+                     Style="{StaticResource FancyPasswordText}"
+                     Height="30"
+                     Width="280"
+                     FontSize="20"
+                     Padding="20 0 0 0">
+
+            <PasswordBox.Background>
+                <ImageBrush ImageSource="Assets/icons/key-icon.png"
+                            Stretch="None"
+                            AlignmentX="Left" />
+            </PasswordBox.Background>
+        </PasswordBox>
 
 
 

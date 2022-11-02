@@ -26,9 +26,8 @@
 
         <Style TargetType="TextBox"
                x:Key="FancyText">
-            <Setter Property="FontWeight" Value="Medium" />
-
-
+            <Setter Property="FontWeight"
+                    Value="Medium" />
             <Setter Property="Background"
                     Value="Transparent" />
             <Setter Property="Foreground"
@@ -40,6 +39,29 @@
             <Setter Property="BorderThickness"
                     Value="0, 0, 0, 2" />
         </Style>
+
+
+
+
+
+        <Style TargetType="PasswordBox"
+               x:Key="FancyPasswordText">
+            <Setter Property="FontWeight"
+                    Value="Medium" />
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="Foreground"
+                    Value="White" />
+            <Setter Property="CaretBrush"
+                    Value="LightGray" />
+            <Setter Property="BorderBrush"
+                    Value="DarkGray" />
+            <Setter Property="BorderThickness"
+                    Value="0, 0, 0, 2" />
+        </Style>
+
+
+
 
 
         <Style TargetType="Button"
@@ -60,6 +82,10 @@
             <Setter Property="Opacity"
                     Value="0.5" />
         </Style>
+
+
+
+
 
         <Style TargetType="{x:Type Button}"
                x:Key="blackRounded">
@@ -94,6 +120,8 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+
 
     </Application.Resources>
 </Application>

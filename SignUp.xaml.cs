@@ -26,7 +26,7 @@ namespace ProgPoeTickNotePart2
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+           this.Close();
         }
 
         MainClass mc = new MainClass();

@@ -22,12 +22,15 @@ namespace ProgPoeTickNotePart2
     {
 
         public string CurrentUser;
+        public int CurrentUserId;
         public TickNoteEntities TNotedb = new TickNoteEntities();
 
 
         public MainWindow()
         {
             InitializeComponent();
+
+
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
@@ -58,8 +61,8 @@ namespace ProgPoeTickNotePart2
          
             AddModule addModule = new AddModule();
 
-            //var user = TNotedb.userAccounts.Where(x => x.username == CurrentUser).FirstOrDefault();
-            //addModule.userId = user.userId;
+            var user = TNotedb.userAccounts.Where(x => x.username == CurrentUser).FirstOrDefault();
+            addModule.userId = user.userId;
             addModule.ShowDialog();
 
 
@@ -67,13 +70,36 @@ namespace ProgPoeTickNotePart2
 
             var modules = from m in TNotedb.modules
                           select m;
-            this.dgModule.ItemsSource = modules.ToList();
+            this.dgModules.ItemsSource = modules.ToList();
 
         }
 
         private void btnAddSession_Click(object sender, RoutedEventArgs e)
         {
 
+            var user = TNotedb.userAccounts.Where(x => x.username == CurrentUser).FirstOrDefault();
+            CurrentUserId = user.userId;
+
+            AddSession addSession = new AddSession();
+            addSession.userId = CurrentUserId;
+            
+            addSession.ShowDialog();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //    TickNoteEntities TNotedb = new TickNoteEntities();
+            //    this.dgModule.ItemsSource = TNotedb.modules.ToList();
+
+            //var modules = from m in TNotedb.modules
+            //              select m;
+            //this.dgModule.ItemsSource = modules.ToList();
+        }
+
+        private void btnRefreshModules_Click(object sender, RoutedEventArgs e)
+        {
+            TickNoteEntities TNotedb = new TickNoteEntities();
+            this.dgModules.ItemsSource = TNotedb.modules.ToList();
         }
     }
 }

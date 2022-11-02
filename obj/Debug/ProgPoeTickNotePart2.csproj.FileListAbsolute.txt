@@ -64,3 +64,5 @@ C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2 - backup after db working wi
 C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2 - backup after db working with extra fields\ProgPoeTickNotePart2\obj\Debug\ProgPoeTickNotePart2.csproj.CopyComplete
 C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2 - backup after db working with extra fields\ProgPoeTickNotePart2\obj\Debug\ProgPoeTickNotePart2.exe
 C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2 - backup after db working with extra fields\ProgPoeTickNotePart2\obj\Debug\ProgPoeTickNotePart2.pdb
+C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2 - backup after db working with extra fields\ProgPoeTickNotePart2\obj\Debug\AddSession.g.cs
+C:\Users\Akshdeep\source\repos\ProgPoeTickNotePart2 - backup after db working with extra fields\ProgPoeTickNotePart2\obj\Debug\AddSession.baml

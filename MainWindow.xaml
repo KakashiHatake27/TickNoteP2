@@ -8,6 +8,7 @@
         Title="MainWindow"
         Height="864"
         Width="1300"
+        Loaded="Window_Loaded"
         WindowStyle="None"
         WindowState="Maximized">
 
@@ -32,8 +33,15 @@
                HorizontalAlignment="Right"
                Source="Assets/icons/delete.png" />
 
-        <Grid Margin="0 60 0 0">
+
+        <Button x:Name="btnRefreshModules"
+                Click="btnRefreshModules_Click"
+            Width="100"
+            Margin="0 60 0 5"
+            Content="Refresh Modules"/>
+        <Grid Margin="0 0 0 0">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
@@ -46,8 +54,9 @@
             <ScrollViewer Width="700"
                           HorizontalAlignment="Left"
                           Grid.Column="0"
+                          Grid.ColumnSpan="2"
+                          Grid.RowSpan="4"
                           Grid.Row="0">
-
 
                 <Grid Grid.Column="2"
                       Grid.ColumnSpan="2"
@@ -55,7 +64,7 @@
                       Grid.RowSpan="4"
                       Margin="40 0 0 0">
 
-                    <DataGrid Name="dgModule"
+                    <DataGrid Name="dgModules"
                               AutoGenerateColumns="True"
                               FontSize="16">
 
@@ -67,19 +76,24 @@
                             </TransformGroup>
                         </DataGrid.RenderTransform>
                         <DataGrid.Columns>
+                            <DataGridTextColumn Header="module Code"
+                                                MinWidth="70"
+                                                Binding="{Binding moduleCode}" />
+                            <DataGridTextColumn Header="module name"
+                                                MinWidth="130"
+                                                Binding="{Binding moduleName}" />
 
-                            <DataGridTextColumn Header="Module Code"
-                                                MinWidth="110"
-                                                Binding="{Binding ModuleCode}" />
-                            <DataGridTextColumn Header="Module Name"
-                                                MinWidth="200"
-                                                Binding="{Binding ModuleName}" />
-                            <DataGridTextColumn Header="Credits"
-                                                MinWidth="80"
-                                                Binding="{Binding Credits}" />
-                            <DataGridTextColumn Header="Classes /week"
+                            <DataGridTextColumn Header="credits"
                                                 MinWidth="100"
-                                                Binding="{Binding NumWeeks}" />
+                                                Binding="{Binding credits}" />
+
+                            <DataGridTextColumn Header="credits"
+                                                MinWidth="100"
+                                                Binding="{Binding credits}" />
+
+                            <DataGridTextColumn Header="classes"
+                                                MinWidth="100"
+                                                Binding="{Binding classes}" />
 
 
                         </DataGrid.Columns>
@@ -92,10 +106,11 @@
             <Button x:Name="btnAddModule"
                     Click="btnAddModule_Click"
                     Style="{StaticResource blackRounded}"
-                    Grid.Column="1"
+                    Grid.Column="2"
                     Grid.Row="0"
                     Grid.RowSpan="2"
                     Width="200"
+                    Height="60"
                     Margin="10"
                     FontSize="14"
                     Content="Add Module" />
@@ -106,9 +121,12 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
@@ -116,6 +134,8 @@
             <ScrollViewer Width="700"
                           HorizontalAlignment="Left"
                           Grid.Column="0"
+                          Grid.ColumnSpan="2"
+                          Grid.RowSpan="4"
                           Grid.Row="0">
 
 
@@ -151,7 +171,6 @@
                                                 MinWidth="100"
                                                 Binding="{Binding hrsRemaining}" />
 
-
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -160,17 +179,16 @@
 
             <Button x:Name="btnAddSession"
                     Style="{StaticResource blackRounded}"
-                    Grid.Column="1"
+                    Grid.Column="2"
                     Grid.Row="0"
-                    Grid.RowSpan="2"
                     Width="200"
+                    Height="60"
                     Margin="10"
                     FontSize="14"
                     Content="Add Study Session"
                     Click="btnAddSession_Click" />
 
         </Grid>
-
 
 
     </StackPanel>

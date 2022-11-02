@@ -52,7 +52,14 @@
                  Style="{StaticResource FancyText}"
                  Height="30"
                  Width="280"
-                 FontSize="20" />
+                 FontSize="20"
+                 Padding="20 0 0 0">
+            <TextBox.Background>
+                <ImageBrush ImageSource="Assets/icons/key-icon.png"
+                            Stretch="None"
+                            AlignmentX="Left" />
+            </TextBox.Background>
+        </TextBox>
         
         <Label x:Name="lblEmail"
             Margin="100 150 0 0"
@@ -66,7 +73,14 @@
                  Style="{StaticResource FancyText}"
                  Height="30"
                  Width="280"
-                 FontSize="20" />
+                 FontSize="20"
+                 Padding="20 0 0 0">
+            <TextBox.Background>
+                <ImageBrush ImageSource="Assets/icons/me2.png"
+                            Stretch="None"
+                            AlignmentX="Left" />
+            </TextBox.Background>
+        </TextBox>
 
 
         <Label x:Name="lblPassword"
@@ -81,7 +95,14 @@
                  Style="{StaticResource FancyText}"
                  Height="30"
                  Width="280"
-                 FontSize="20" />
+                 FontSize="20"
+                 Padding="20 0 0 0">
+            <TextBox.Background>
+                <ImageBrush ImageSource="Assets/icons/key-icon.png"
+                            Stretch="None"
+                            AlignmentX="Left" />
+            </TextBox.Background>
+        </TextBox>
 
 
         <Label x:Name="lblConfirmPassword" 
@@ -96,7 +117,14 @@
                  Style="{StaticResource FancyText}"
                  Height="30"
                  Width="280"
-                 FontSize="20" />
+                 FontSize="20"
+                 Padding="20 0 0 0">
+            <TextBox.Background>
+                <ImageBrush ImageSource="Assets/icons/key-icon.png"
+                            Stretch="None"
+                            AlignmentX="Left" />
+            </TextBox.Background>
+        </TextBox>
 
 
 

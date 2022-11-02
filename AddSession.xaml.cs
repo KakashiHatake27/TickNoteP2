@@ -19,6 +19,9 @@ namespace ProgPoeTickNotePart2
     /// </summary>
     public partial class AddSession : Window
     {
+
+        public int userId;
+
         public AddSession()
         {
             InitializeComponent();
@@ -30,6 +33,38 @@ namespace ProgPoeTickNotePart2
             {
                 DragMove();
             }
+
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAddSession_Click(object sender, RoutedEventArgs e)
+        {
+
+
+
+            MessageBox.Show("User id: " + userId.ToString());
+
+            //TickNoteEntities db = new TickNoteEntities();
+            //module moduleObj = new module()
+            //{
+            //    moduleCode = tbModuleCode.Text,
+            //    moduleName = tbModuleName.Text,
+            //    userId = userId,
+            //    credits = Convert.ToInt32(tbCredits.Text),
+            //    classes = Convert.ToInt32(tbClasses.Text)
+            //};
+
+            //db.modules.Add(moduleObj);
+            //db.SaveChanges();
+
+
+
+            //MessageBox.Show("Module added successfully");
+            //this.Close();
 
         }
     }

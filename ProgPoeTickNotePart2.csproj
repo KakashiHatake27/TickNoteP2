@@ -245,6 +245,13 @@
     <Resource Include="Assets\bg3.jpg" />
     <Resource Include="Assets\bg4.jpg" />
     <Resource Include="Assets\bg7.jpg" />
+    <Resource Include="Assets\icons\user-icon.png" />
+    <Resource Include="Assets\icons\key-icon.png" />
+    <Resource Include="Assets\icons\email.png" />
+    <Resource Include="Assets\icons\ail.png" />
+    <Resource Include="Assets\icons\mail2.png" />
+    <Resource Include="Assets\icons\mea.png" />
+    <Resource Include="Assets\icons\me2.png" />
     <Content Include="TickNote.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

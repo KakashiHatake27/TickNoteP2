@@ -31,15 +31,17 @@ namespace ProgPoeTickNotePart2
         {
 
 
-            MainWindow mw = new MainWindow();
-            mw.Show();
+            //MessageBox.Show(tbPassword.Password);
 
-            mw.CurrentUser = tbUsername.Text;
-            this.Hide();
+            //MainWindow mw = new MainWindow();
+            //mw.Show();
+
+            //mw.CurrentUser = tbUsername.Text;
+            //this.Hide();
 
 
 
-            /*
+            
 
             MainClass mc = new MainClass();
 
@@ -55,7 +57,7 @@ namespace ProgPoeTickNotePart2
 
             if (user != null)
             {
-                if (user.password == mc.Encrypt(tbPassword.Text))
+                if (user.password == mc.Encrypt(tbPassword.Password))
                 {
                     MainWindow mw = new MainWindow();
                     mw.Show();
@@ -77,7 +79,7 @@ namespace ProgPoeTickNotePart2
                 MessageBox.Show("This User does not exist!", "Username not found", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
 
-            */
+            
         }
 
         private void btnSignUp_Click(object sender, RoutedEventArgs e)
@@ -88,6 +90,12 @@ namespace ProgPoeTickNotePart2
 
         public bool validateInputs()
         {
+
+            lblUsername.Foreground = new SolidColorBrush(Colors.Black);
+            lblUsername.Content = "USERNAME";
+            lblPassword.Foreground = new SolidColorBrush(Colors.Black);
+            lblPassword.Content = "PASSWORD";
+
             bool result = true;
 
             if (string.IsNullOrEmpty(tbUsername.Text))
@@ -97,7 +105,7 @@ namespace ProgPoeTickNotePart2
                 result = false;
             }
 
-            if (string.IsNullOrEmpty(tbPassword.Text))
+            if (string.IsNullOrEmpty(tbPassword.Password))
             {
                 lblPassword.Foreground = new SolidColorBrush(Colors.Red);
                 lblPassword.Content = "Please enter a valid password";
@@ -108,5 +116,13 @@ namespace ProgPoeTickNotePart2
 
         }
 
+        private void imgClose_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+
+                Application.Current.Shutdown();
+            }
+        }
     }
 }

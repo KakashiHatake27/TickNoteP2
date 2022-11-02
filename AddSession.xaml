@@ -13,7 +13,7 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
-        MouseDown="">
+        MouseDown="Window_MouseDown">
 
     <Border CornerRadius="50"
             BorderThickness="5">
@@ -41,7 +41,13 @@
                    Content="Date of study" />
 
             <DatePicker  FontSize="16"
-                                Margin="0 10 0 0" />
+                         Margin="0 10 0 0"
+                         Text="">
+                <DatePicker.Background>
+                    <SolidColorBrush Color="DarkGray"
+                                Opacity="0.3" />
+                </DatePicker.Background>
+            </DatePicker>
 
 
             <TextBox FontSize="16"
@@ -72,8 +78,8 @@
                      x:Name="tbClasses" />
 
 
-            <Button x:Name="btnAddModule"
-                    Click="btnAddModule_Click"
+            <Button x:Name="btnAddSession"
+                    Click="btnAddSession_Click"
                     Margin="0 50 0 0"
                     FontSize="16"
                     Width="300"
