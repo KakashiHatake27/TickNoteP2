@@ -67,11 +67,7 @@ namespace ProgPoeTickNotePart2
                 }
                 else
                 {
-
                     MessageBox.Show("Incorrect Password, Please try again!", "Incorrect Password", MessageBoxButton.OK, MessageBoxImage.Stop);
-
-               
-
                 }
             }
             else

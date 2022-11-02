@@ -40,21 +40,16 @@
                    Margin="0 20 0 0"
                    Content="Date of study" />
 
-            <DatePicker  FontSize="16"
+            <DatePicker  
+                x:Name="dpStudyDate"
+                FontSize="16"
                          Margin="0 10 0 0"
                          Text="">
                 <DatePicker.Background>
                     <SolidColorBrush Color="DarkGray"
-                                Opacity="0.3" />
+                                     Opacity="0.3" />
                 </DatePicker.Background>
             </DatePicker>
-
-
-            <TextBox FontSize="16"
-                     Margin="0 10 0 0"
-                     Style="{StaticResource FancyText}"
-                     Foreground="Black"
-                     x:Name="tbModuleName" />
 
 
             <Label FontSize="16"
@@ -65,7 +60,7 @@
                      Margin="0 10 0 0"
                      Style="{StaticResource FancyText}"
                      Foreground="Black"
-                     x:Name="tbCredits" />
+                     x:Name="tbModule" />
 
             <Label FontSize="16"
                    Margin="0 20 0 0"
@@ -75,7 +70,7 @@
                      Margin="0 10 0 0"
                      Style="{StaticResource FancyText}"
                      Foreground="Black"
-                     x:Name="tbClasses" />
+                     x:Name="tbHours" />
 
 
             <Button x:Name="btnAddSession"
@@ -84,7 +79,7 @@
                     FontSize="16"
                     Width="300"
                     Style="{StaticResource blackRounded}"
-                    Content="Add Module" />
+                    Content="Add Session" />
 
             <Button x:Name="btnClose"
                     Click="btnClose_Click"

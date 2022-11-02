@@ -46,7 +46,9 @@ namespace ProgPoeTickNotePart2
 
 
 
-            MessageBox.Show("User id: " + userId.ToString());
+            //MessageBox.Show("User id: " + userId.ToString());
+
+            saveSession();
 
             //TickNoteEntities db = new TickNoteEntities();
             //module moduleObj = new module()
@@ -67,5 +69,25 @@ namespace ProgPoeTickNotePart2
             //this.Close();
 
         }
+
+
+        public async void saveSession()
+        {
+
+            TickNoteEntities db = new TickNoteEntities();
+
+            studySession sessionObj = new studySession()
+            {
+                userId = userId,
+                studyDate = dpStudyDate.DisplayDate,
+                module = tbModule.Text,
+                hoursWorked = Convert.ToInt32(tbHours.Text)
+            };
+
+
+            db.studySessions.Add(sessionObj);
+            await db.SaveChangesAsync();
+        }
+
     }
 }

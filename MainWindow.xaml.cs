@@ -101,5 +101,12 @@ namespace ProgPoeTickNotePart2
             TickNoteEntities TNotedb = new TickNoteEntities();
             this.dgModules.ItemsSource = TNotedb.modules.ToList();
         }
+
+        private void btnRefreshSessions_Click(object sender, RoutedEventArgs e)
+        {
+
+            TickNoteEntities TNotedb = new TickNoteEntities();
+            this.dgSession.ItemsSource = TNotedb.studySessions.ToList();
+        }
     }
 }
