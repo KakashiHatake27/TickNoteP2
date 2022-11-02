@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TickNoteDLL;
 
 namespace ProgPoeTickNotePart2
 {
@@ -29,7 +30,10 @@ namespace ProgPoeTickNotePart2
            this.Close();
         }
 
-        MainClass mc = new MainClass();
+
+
+
+        TickNoteDLL.MainClass mc = new MainClass();
 
         private void btnSignUp_Click(object sender, RoutedEventArgs e)
         {

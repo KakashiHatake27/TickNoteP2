@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TickNoteDLL;
 
 namespace ProgPoeTickNotePart2
 {
@@ -43,7 +44,7 @@ namespace ProgPoeTickNotePart2
 
             
 
-            MainClass mc = new MainClass();
+            TickNoteDLL.MainClass mc = new MainClass();
 
             if (!validateInputs())
             {

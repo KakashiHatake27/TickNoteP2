@@ -158,7 +158,7 @@
                     </Grid.ColumnDefinitions>
 
                     <DataGrid x:Name="dgSession"
-                              AutoGenerateColumns="True"
+                              AutoGenerateColumns="False"
                               FontSize="14"
                               Grid.ColumnSpan="2">
 
@@ -204,6 +204,9 @@
                     Click="btnAddSession_Click" />
 
         </Grid>
+        
+        
+        
 
 
     </StackPanel>

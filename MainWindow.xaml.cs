@@ -96,6 +96,7 @@ namespace ProgPoeTickNotePart2
             //this.dgModule.ItemsSource = modules.ToList();
         }
 
+
         private void btnRefreshModules_Click(object sender, RoutedEventArgs e)
         {
             TickNoteEntities TNotedb = new TickNoteEntities();
